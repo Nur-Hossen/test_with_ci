@@ -73,4 +73,7 @@ class CI_Model {
 		return get_instance()->$key;
 	}
 
+    public function pr($data){
+        echo '<pre>'; print_r($data); die;
+    }
 }
