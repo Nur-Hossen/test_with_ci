@@ -2,7 +2,7 @@
     <br><br>
     <label>Name : </label><input type="text" name="name" id="name" value="<?php echo isset($row['name'])? $row['name']:''?>"><br><br>
     <label>Image : </label><input type="file" name="image" id="image" value="<?php echo isset($row['image'])? base_url('uploads/').$row['image']:''?>"><br><br>
-    <img src="#" id="up_image" alt="uploaded image"><br><br>
+    <img src="<?php echo (isset($row['image']))? base_url('uploads/').$row['image'] : '#';?>" id="up_image" alt="uploaded image"><br><br>
     <button type="submit">Save</button>
 </form>
 
@@ -24,7 +24,7 @@
         }
     }
 
-    $("#image").change(function() { alert('hello');
+    $("#image").change(function() {
         readURL(this);
     });
 </script>
